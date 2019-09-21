@@ -54,7 +54,7 @@ class App extends React.Component {
   getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log('getSnapshotBeforeUpdate')
     console.log(prevProps, prevState)
-    return null
+    return "Hello i'm getSnapshotBeforeUpdate!"
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
