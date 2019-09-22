@@ -28,7 +28,11 @@ class App extends React.Component {
           Update Button
         </button>
         {isChild &&
-        <ChildComponent />
+        <ChildComponent
+          hello={() => {
+            console.log('heelo')
+          }}
+        />
         }
         <button onClick={() => {
           this.setState({
@@ -68,6 +72,7 @@ class App extends React.Component {
 
   componentDidCatch(error, errorInfo) {
     console.log('componentDidCatch')
+    console.log('error in ChildComponent')
     console.log(error, errorInfo)
   }
 }
