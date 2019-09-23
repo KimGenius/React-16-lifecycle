@@ -28,11 +28,7 @@ class App extends React.Component {
           Update Button
         </button>
         {isChild &&
-        <ChildComponent
-          hello={() => {
-            console.log('heelo')
-          }}
-        />
+        <ChildComponent />
         }
         <button onClick={() => {
           this.setState({

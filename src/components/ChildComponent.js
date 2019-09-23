@@ -1,9 +1,5 @@
 import React from 'react'
 class ChildComponent extends React.Component {
-  constructor(props) {
-    super(props)
-    this.hello = this.hello.bind(this)
-  }
   componentWillUnmount() {
     console.log('goodbye child...')
   }
@@ -11,15 +7,18 @@ class ChildComponent extends React.Component {
   componentDidMount() {
     console.log('Hello Child!')
   }
-  hello () {
-    console.log(this.props.a.a)
-  }
   render() {
-    // const { list: { item } } = this.props
     const { hello } = this.props
+    // hello()
     return (
       <div>
-        <button onClick={this.hello}>
+        <button onClick={() => {
+          try {
+            hello()
+          } catch (err) {
+            console.log(err)
+          }
+        }}>
           에러!
         </button>
         Hi Child
